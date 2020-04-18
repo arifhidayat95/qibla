@@ -2,8 +2,12 @@
 <widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <access origin="*" />
   
-  <feature name="Magnetometer">
-    <param name="android-package" value="org.apache.cordova.magnetometer.Magnetometer"/>
+  <feature name="Compass">
+    <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener"/>
+  </feature>
+
+  <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
   </feature>
 
   

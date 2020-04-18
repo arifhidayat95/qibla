@@ -8,7 +8,8 @@
 
 <ion-content>
   <div id="container">
-    <strong>MagnetometerReading</strong>
-    <p>{{data | json}}</p>
+    <!-- <strong>DeviceOrientationCompassHeading</strong> -->
+    <p>{{(!!data ? data.magneticHeading : 0)}}°</p>
+    <img src="assets/compass.png" width="200em" [ngStyle]="{'transform': 'rotate(-'+(!!data ? data.magneticHeading : 0)+'deg)'}">
   </div>
 </ion-content>

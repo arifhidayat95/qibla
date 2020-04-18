@@ -8,7 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { Magnetometer } from '@ionic-native/magnetometer/ngx';
+import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,7 @@ import { Magnetometer } from '@ionic-native/magnetometer/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Magnetometer
+    DeviceOrientation
   ],
   bootstrap: [AppComponent]
 })

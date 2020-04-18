@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Magnetometer, MagnetometerReading } from '@ionic-native/magnetometer/ngx';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +7,14 @@ import { Magnetometer, MagnetometerReading } from '@ionic-native/magnetometer/ng
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  data: MagnetometerReading;
+  public data: DeviceOrientationCompassHeading = null;
 
-  constructor(private magnetometer: Magnetometer) {
-    this.magnetometer.watchReadings().subscribe(res => {
+  constructor(private deviceOrientation: DeviceOrientation) {
+    // Watch the device compass heading change
+    this.deviceOrientation.watchHeading().subscribe((res: DeviceOrientationCompassHeading) => {
       this.data = res;
-    })
+      }
+    );
   }
 
 }
